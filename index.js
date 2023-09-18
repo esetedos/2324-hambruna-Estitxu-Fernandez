@@ -72,11 +72,65 @@ const fetchAsyncData = async () => {
         maxFibre.map(element => {
             console.log(element.name);
         })
+        console.log();
+        console.log();
+
+
+
+        /////////////////////////////////////////////////////////////////
+        console.log("2. Segundo ejercicio");
+
+        //Listar todos los donuts y sus calorías
+        result.map(element => {
+            console.log(element.name + " & calorías: " + element.nutrition_facts.nutrition.calories);
+        })
+        console.log();
 
         //Listar todos los donuts y sus carbohidratos
+        result.map(element => {
+            console.log(element.name + " & carbohidratos: " + element.nutrition_facts.nutrition.carbohydrate.daily_value + "(daily value) y " + element.nutrition_facts.nutrition.carbohydrate.carbs_detail.amount + "(amout)");
+        })
+        console.log()
+
         //Mostrar la media de calorías de entre todos los donuts
+        let mediaCalories = 0;
+        result.map(element => {
+            mediaCalories += element.nutrition_facts.nutrition.calories;
+        })
+        console.log("Media de calorías: " + (mediaCalories/(result.length)))
+        console.log()
+
         //Mostrar la suma de las grasas saturadas de todos los donuts
+        let sumSaturatedFat = 0;
+        result.map(element => {
+            element.nutrition_facts.nutrition.fat.fat_type.saturated = parseInt(element.nutrition_facts.nutrition.fat.fat_type.saturated.slice(0, element.nutrition_facts.nutrition.fat.fat_type.saturated.length-1));
+            sumSaturatedFat += element.nutrition_facts.nutrition.fat.fat_type.saturated;
+        })
+        console.log("Suma de las grasas saturadas de todos los donuts: "  + sumSaturatedFat);
+        console.log()
+
         //Mostrar el porcentaje medio de cada vitamina
+        let vitaminA = 0;
+        let vitaminB = 0;
+        let calcium = 0;
+        let iron = 0;
+
+        result.map(element => {
+            vitaminA += parseInt(element.nutrition_facts.nutrition.vitamines[0].percent);
+            vitaminB += parseInt(element.nutrition_facts.nutrition.vitamines[1].percent);
+            calcium += parseInt(element.nutrition_facts.nutrition.vitamines[2].percent);
+            iron += parseInt(element.nutrition_facts.nutrition.vitamines[3].percent);
+        })
+        console.log("vitamin A: " + vitaminA/result.length);
+        console.log("vitamin B: " + vitaminB/result.length);
+        console.log("calcium: " + calcium/result.length);
+        console.log("iron: " + iron/result.length);
+        // console.log(vitamins);
+
+
+
+
+
 
     } catch (error){
         console.log(error.menssage)
