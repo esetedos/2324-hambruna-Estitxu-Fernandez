@@ -126,7 +126,8 @@ const fetchAsyncData = async () => {
         console.log("calcium: " + calcium/result.length);
         console.log("iron: " + iron/result.length);
 
-        /////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
         console.log("3. Tercer ejercicio");
 
         //Listar cada donut con sus posibles masas, butter
@@ -146,6 +147,30 @@ const fetchAsyncData = async () => {
                 console.log("  " + topping.type);
             })
         })
+console.log()
+console.log()
+console.log()
+
+
+///////////////////////////////////////////////////////////////////////////
+        console.log("4. Cuarto ejercicio");
+
+        //mostrar cuantos donuts de cada tipo podemos comprar y el dinero restante (4 monedas)
+        let dinero = 400;
+        result.map(element => {
+            let cant = Math.floor(dinero/element.ppu);
+            let resto = Math.floor((dinero - (element.ppu*cant))*100)/100;
+
+            console.log("Podríamos comprar " + cant + " de donuts tipo " + element.name + " y nos sobrarían " + resto + " monedas");
+        })
+
+
+
+
+
+
+
+
 
     } catch (error){
         console.log(error.menssage)
