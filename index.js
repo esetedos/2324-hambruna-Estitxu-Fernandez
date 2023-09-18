@@ -125,12 +125,27 @@ const fetchAsyncData = async () => {
         console.log("vitamin B: " + vitaminB/result.length);
         console.log("calcium: " + calcium/result.length);
         console.log("iron: " + iron/result.length);
-        // console.log(vitamins);
 
+        /////////////////////////////////////////////////////////////////
+        console.log("3. Tercer ejercicio");
 
+        //Listar cada donut con sus posibles masas, butter
+        result.map(element => {
+            console.log(element.name + " & posible batters:");
+            element.batters.batter.map(batter =>{
+                console.log("  " + batter.type);
+            })
+        })
+        console.log()
+        console.log()
 
-
-
+        //Listar cada donut con sus posibles extras topping
+        result.map(element => {
+            console.log(element.name + " & extras topping:");
+            element.topping.map(topping =>{
+                console.log("  " + topping.type);
+            })
+        })
 
     } catch (error){
         console.log(error.menssage)
