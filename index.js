@@ -62,66 +62,48 @@ console.log("2. Segundo ejercicio");
     })
     console.log()
 
-    // //Mostrar la media de calorías de entre todos los donuts
-    // let mediaCalories = 0;
-    // result.map(element => {
-    //     mediaCalories += element.nutrition_facts.nutrition.calories;
-    // })
-    // console.log("Media de calorías: " + (mediaCalories/(result.length)))
-    // console.log()
+    //Mostrar la media de calorías de entre todos los donuts
+    let mediaCalories = 0;
+    result.map(element => {
+        mediaCalories += element.nutrition_facts.nutrition.calories;
+    })
+    console.log("Media de calorías: " + (mediaCalories/(result.length)))
+    console.log()
 
-    // //Mostrar la suma de las grasas saturadas de todos los donuts
-    // let sumSaturatedFat = 0;
-    // result.map(element => {
-    //     element.nutrition_facts.nutrition.fat.fat_type.saturated = parseInt(element.nutrition_facts.nutrition.fat.fat_type.saturated.slice(0, element.nutrition_facts.nutrition.fat.fat_type.saturated.length-1));
-    //     sumSaturatedFat += element.nutrition_facts.nutrition.fat.fat_type.saturated;
-    // })
-    // console.log("Suma de las grasas saturadas de todos los donuts: "  + sumSaturatedFat);
-    // console.log()
 
-    // //Mostrar el porcentaje medio de cada vitamina
-    // let vitamines = [];
-    // // vitamines.length = result[0].nutrition_facts.nutrition.vitamines.length;
+    //Mostrar la suma de las grasas saturadas de todos los donuts
+    let sumSaturatedFat = 0;
+    result.map(element => {
+        element.nutrition_facts.nutrition.fat.fat_type.saturated = parseInt(element.nutrition_facts.nutrition.fat.fat_type.saturated.slice(0, element.nutrition_facts.nutrition.fat.fat_type.saturated.length-1));
+        sumSaturatedFat += element.nutrition_facts.nutrition.fat.fat_type.saturated;
+    })
+    console.log("Suma de las grasas saturadas de todos los donuts: "  + sumSaturatedFat);
+    console.log()
 
-    // let vitaminA = 0;
-    // let vitaminB = 0;
-    // let calcium = 0;
-    // let iron = 0;
-    // let p = 0;
-    // // console.log(vitamines)
+    
 
-    // result[0].nutrition_facts.nutrition.vitamines.map(element =>{
-    //     vitamines.push(0);
-    // })
-    // // console.log(vitamines)
+    //Mostrar el porcentaje medio de cada vitamina
+    let vitamines = [];
 
-    // result.map(element => {
-    //     p = 0
-    //     vitamines = vitamines.map(vit => {
-    //         console.log(vit)
-    //         vit += parseInt(element.nutrition_facts.nutrition.vitamines[p].percent);
-    //         p++;
-    //         console.log(vit)
-    //     })
-    //     console.log(vitamines[0])
-        
-    // })
-    // // console.log(vitamines)
-    // // console.log(vitamines)
-    // // vitamines.map(element => {
-    // //     
-    // // })
 
-    // //         result.map(element => {
-    // //             vitaminA += parseInt(element.nutrition_facts.nutrition.vitamines[0].percent);
-    // //             vitaminB += parseInt(element.nutrition_facts.nutrition.vitamines[1].percent);
-    // //             calcium += parseInt(element.nutrition_facts.nutrition.vitamines[2].percent);
-    // //             iron += parseInt(element.nutrition_facts.nutrition.vitamines[3].percent);
-    // //         })
-    // //         console.log("vitamin A: " + vitaminA/result.length);
-    // //         console.log("vitamin B: " + vitaminB/result.length);
-    // //         console.log("calcium: " + calcium/result.length);
-    // //         console.log("iron: " + iron/result.length);
+    result[0].nutrition_facts.nutrition.vitamines.map(element =>{
+        vitamines.push(0);
+    })
+
+
+    result.map(element => {
+        p = 0
+        vitamines.map(vit => {
+            vitamines[p] += parseInt(element.nutrition_facts.nutrition.vitamines[p].percent);
+            p++;
+        })        
+    })
+
+    p=0;
+    vitamines.map(vit => {
+        console.log(result[0].nutrition_facts.nutrition.vitamines[p].type + ": " + vit/vitamines.length);
+        p++;
+    })
 
 
     // // ///////////////////////////////////////////////////////////////////////////
