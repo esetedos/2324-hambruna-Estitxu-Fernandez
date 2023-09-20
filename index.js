@@ -85,14 +85,14 @@ console.log("2. Segundo ejercicio");
 
 
     result.map(element => {
-        p = 0
+        let p = 0
         vitamines.map(vit => {
             vitamines[p] += parseInt(element.nutrition_facts.nutrition.vitamines[p].percent);
             p++;
         })        
     })
 
-    p=0;
+    let p=0;
     vitamines.map(vit => {
         console.log(result[0].nutrition_facts.nutrition.vitamines[p].type + ": " + vit/vitamines.length);
         p++;
